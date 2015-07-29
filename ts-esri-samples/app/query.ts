@@ -1,7 +1,4 @@
-﻿/// <reference path="dojo.d.ts" />
-/// <reference path="arcgis-js-api.d.ts" />
-
-import dom = require("dojo/dom");
+﻿/// <reference path="arcgis-js-api.d.ts" />
 
 import Map = require("esri/map");
 import FeatureLayer = require("esri/layers/FeatureLayer");
@@ -104,7 +101,7 @@ function selectInBuffer(response: any): void {
     featureLayer.selectFeatures(query, FeatureLayer.SELECTION_NEW, function (results: Graphic[]) {
         var totalPopulation: number = sumPopulation(results);
         var r: string = "<b>The total Census Block population within the buffer is <i>" + totalPopulation + "</i>.</b>";
-        dom.byId("messages").innerHTML = r;
+        document.getElementById("messages").innerHTML = r;
     });
 }
 
